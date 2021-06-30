@@ -7,15 +7,44 @@ header {
   line-height: 30px;
   font-size: 20px;
 }
+header.notSticky{
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-direction: reverse;
+}
+@keyframes slideIn{
+  0%{
+    top:0;
+  }
+  100%{
+    top:-150px;
+  }
+}
 header.sticky {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  animation-name: slideOut;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes slideOut{
+  0%{
+    top: -150px;
+  }
+  100%{
+    top: 0;
+  }
 }
 header.sticky + * {
   margin-top: 60px;
 }
+
 
 main {
   display: flex;
